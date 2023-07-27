@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Erstellungszeit: 23. Jul 2023 um 12:28
--- Server-Version: 10.4.28-MariaDB
--- PHP-Version: 8.2.4
+-- Host: 127.0.0.1
+-- Erstellungszeit: 27. Jul 2023 um 10:35
+-- Server-Version: 10.4.21-MariaDB
+-- PHP-Version: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,7 +31,7 @@ CREATE TABLE `tbl_allergene` (
   `IDAllergen` int(10) UNSIGNED NOT NULL,
   `Kurzzeichen` varchar(1) NOT NULL,
   `Beschreibung` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Daten für Tabelle `tbl_allergene`
@@ -62,7 +62,7 @@ INSERT INTO `tbl_allergene` (`IDAllergen`, `Kurzzeichen`, `Beschreibung`) VALUES
 CREATE TABLE `tbl_einheiten` (
   `IDEinheit` int(10) UNSIGNED NOT NULL,
   `Einheit` varchar(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Daten für Tabelle `tbl_einheiten`
@@ -83,7 +83,7 @@ CREATE TABLE `tbl_kategorien` (
   `FIDKategorie` int(10) UNSIGNED DEFAULT NULL,
   `Bezeichnung` varchar(32) NOT NULL,
   `Reihenfolge` tinyint(3) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Daten für Tabelle `tbl_kategorien`
@@ -117,40 +117,40 @@ CREATE TABLE `tbl_produkte` (
   `Zusatztext` text DEFAULT NULL,
   `Anmerkungen` text DEFAULT NULL,
   `Preis` decimal(5,2) UNSIGNED DEFAULT 0.00
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Daten für Tabelle `tbl_produkte`
 --
 
 INSERT INTO `tbl_produkte` (`IDProdukt`, `Anzahl`, `FIDEinheit`, `Produkt`, `Zusatztext`, `Anmerkungen`, `Preis`) VALUES
-(1, NULL, NULL, 'Kürbiscremesuppe', NULL, NULL, 0.00),
-(2, NULL, NULL, 'Gans mit Maronifülle', NULL, NULL, 0.00),
-(3, NULL, NULL, 'Tiramisu', NULL, NULL, 0.00),
-(4, NULL, NULL, 'Rindsuppe mit Frittaten', NULL, NULL, 0.00),
-(5, NULL, NULL, 'Gulaschsuppe mit Gebäck', NULL, NULL, 0.00),
-(6, NULL, NULL, 'Gemischter Salat mit Essig- und Olivenöl-Marinade', NULL, NULL, 0.00),
-(7, NULL, NULL, 'Gemischter Salat mit französischem Senfdressing', NULL, NULL, 0.00),
-(8, NULL, NULL, 'Gemischter Salat mit Joghurt-Schnittlauch-Dressing', NULL, NULL, 0.00),
-(9, NULL, NULL, 'Wienerschnitzel vom Schwein', 'mit Petersilienkartoffeln und grünem Salat', NULL, 0.00),
-(10, NULL, NULL, 'Cordon bleu mit Pommes frites', NULL, NULL, 0.00),
-(11, NULL, NULL, 'Schweinsbraten im Natursaft', 'mit Sauerkraut und Semmelknödel', NULL, 0.00),
-(12, NULL, NULL, 'Gefüllte Kalbsbrust', 'mit Petersilienkartoffeln', NULL, 0.00),
-(13, NULL, NULL, 'Miesmuscheln', 'in Lauch-Weißwein-Sauce mit Knoblauchbrot', NULL, 0.00),
-(14, NULL, NULL, 'Pochiertes Steinbuttfilet mit Wurzelstreifen', NULL, NULL, 0.00),
-(15, NULL, NULL, 'Palatschinken', 'mit Marillenmarmelade', NULL, 0.00),
-(16, NULL, NULL, 'Apfelstrudel mit Schlagobers', NULL, NULL, 0.00),
-(17, NULL, NULL, 'Salzburger Nockerln', NULL, NULL, 0.00),
-(18, 2.000, 2, 'Marillenknödel', NULL, NULL, 0.00),
-(19, 0.500, 1, 'Hausbier vom Fass', NULL, NULL, 0.00),
-(20, 0.500, 1, 'Weizenbier, hell', NULL, NULL, 0.00),
-(21, 0.500, 1, 'alkoholfreies Bier', NULL, NULL, 0.00),
-(22, NULL, NULL, 'Großer Brauner', NULL, NULL, 0.00),
-(23, NULL, NULL, 'Caffé Latte', NULL, NULL, 0.00),
-(24, NULL, NULL, 'Coca Cola', NULL, NULL, 0.00),
-(25, NULL, NULL, 'Coca Cola light', NULL, 'eine Phenylalaninquelle', 0.00),
-(26, 0.125, 1, 'Weißwein', NULL, NULL, 0.00),
-(27, 0.125, 1, 'Rotwein', NULL, NULL, 0.00);
+(1, NULL, NULL, 'Kürbiscremesuppe', NULL, NULL, '0.00'),
+(2, NULL, NULL, 'Gans mit Maronifülle', NULL, NULL, '0.00'),
+(3, NULL, NULL, 'Tiramisu', NULL, NULL, '0.00'),
+(4, NULL, NULL, 'Rindsuppe mit Frittaten', NULL, NULL, '0.00'),
+(5, NULL, NULL, 'Gulaschsuppe mit Gebäck', NULL, NULL, '0.00'),
+(6, NULL, NULL, 'Gemischter Salat mit Essig- und Olivenöl-Marinade', NULL, NULL, '0.00'),
+(7, NULL, NULL, 'Gemischter Salat mit französischem Senfdressing', NULL, NULL, '0.00'),
+(8, NULL, NULL, 'Gemischter Salat mit Joghurt-Schnittlauch-Dressing', NULL, NULL, '0.00'),
+(9, NULL, NULL, 'Wienerschnitzel vom Schwein', 'mit Petersilienkartoffeln und grünem Salat', NULL, '0.00'),
+(10, NULL, NULL, 'Cordon bleu mit Pommes frites', NULL, NULL, '0.00'),
+(11, NULL, NULL, 'Schweinsbraten im Natursaft', 'mit Sauerkraut und Semmelknödel', NULL, '0.00'),
+(12, NULL, NULL, 'Gefüllte Kalbsbrust', 'mit Petersilienkartoffeln', NULL, '0.00'),
+(13, NULL, NULL, 'Miesmuscheln', 'in Lauch-Weißwein-Sauce mit Knoblauchbrot', NULL, '0.00'),
+(14, NULL, NULL, 'Pochiertes Steinbuttfilet mit Wurzelstreifen', NULL, NULL, '0.00'),
+(15, NULL, NULL, 'Palatschinken', 'mit Marillenmarmelade', NULL, '0.00'),
+(16, NULL, NULL, 'Apfelstrudel mit Schlagobers', NULL, NULL, '0.00'),
+(17, NULL, NULL, 'Salzburger Nockerln', NULL, NULL, '0.00'),
+(18, 2.000, 2, 'Marillenknödel', NULL, NULL, '0.00'),
+(19, 0.500, 1, 'Hausbier vom Fass', NULL, NULL, '0.00'),
+(20, 0.500, 1, 'Weizenbier, hell', NULL, NULL, '0.00'),
+(21, 0.500, 1, 'alkoholfreies Bier', NULL, NULL, '0.00'),
+(22, NULL, NULL, 'Großer Brauner', NULL, NULL, '0.00'),
+(23, NULL, NULL, 'Caffé Latte', NULL, NULL, '0.00'),
+(24, NULL, NULL, 'Coca Cola', NULL, NULL, '0.00'),
+(25, NULL, NULL, 'Coca Cola light', NULL, 'eine Phenylalaninquelle', '0.00'),
+(26, 0.125, 1, 'Weißwein', NULL, NULL, '0.00'),
+(27, 0.125, 1, 'Rotwein', NULL, NULL, '0.00');
 
 -- --------------------------------------------------------
 
@@ -162,7 +162,7 @@ CREATE TABLE `tbl_produkte_kategorien` (
   `IDProduktKategorie` int(10) UNSIGNED NOT NULL,
   `FIDProdukt` int(10) UNSIGNED NOT NULL,
   `FIDKategorie` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Daten für Tabelle `tbl_produkte_kategorien`
@@ -209,7 +209,7 @@ CREATE TABLE `tbl_produkt_allergene` (
   `IDProduktAllergene` int(10) UNSIGNED NOT NULL,
   `FIDProdukt` int(10) UNSIGNED NOT NULL,
   `FIDAllergen` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Daten für Tabelle `tbl_produkt_allergene`
@@ -297,7 +297,14 @@ CREATE TABLE `tbl_wochenmenue` (
   `gueltigVon` date NOT NULL,
   `gueltigBis` date NOT NULL,
   `Preis` decimal(5,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Daten für Tabelle `tbl_wochenmenue`
+--
+
+INSERT INTO `tbl_wochenmenue` (`IDWochenmenue`, `FIDKategorie`, `gueltigVon`, `gueltigBis`, `Preis`) VALUES
+(1, 1, '2023-07-24', '2023-07-30', '25.00');
 
 --
 -- Indizes der exportierten Tabellen
@@ -345,7 +352,8 @@ ALTER TABLE `tbl_produkte_kategorien`
 --
 ALTER TABLE `tbl_produkt_allergene`
   ADD PRIMARY KEY (`IDProduktAllergene`),
-  ADD UNIQUE KEY `FIDProdukt_2` (`FIDProdukt`,`FIDAllergen`);
+  ADD UNIQUE KEY `FIDProdukt_2` (`FIDProdukt`,`FIDAllergen`),
+  ADD KEY `tbl_produkt_allergene_ibfk_2` (`FIDAllergen`);
 
 --
 -- Indizes für die Tabelle `tbl_wochenmenue`
@@ -398,7 +406,7 @@ ALTER TABLE `tbl_produkt_allergene`
 -- AUTO_INCREMENT für Tabelle `tbl_wochenmenue`
 --
 ALTER TABLE `tbl_wochenmenue`
-  MODIFY `IDWochenmenue` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `IDWochenmenue` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints der exportierten Tabellen
